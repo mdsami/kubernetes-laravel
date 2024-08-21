@@ -1,4 +1,4 @@
-# Multi-stage builds are a new feature requiring Docker 17.05 or higher on the daemon and client. 
+# Multi-stage builds are a new feature requiring Docker latest  on the daemon and client. 
 
 # stage
 FROM composer:latest as composer
@@ -10,7 +10,7 @@ RUN composer install
 # stage END
 
 # stage
-FROM php:8.2-fpm-alpine
+FROM php:8.3-fpm-alpine
 
 WORKDIR /var/www/html
 COPY --from=composer /app /var/www/html
