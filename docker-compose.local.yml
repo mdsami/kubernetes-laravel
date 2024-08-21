@@ -5,8 +5,8 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: pw
-      MYSQL_DATABASE: my_db_name
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_name
     volumes:
       # mount data folder for mysql system and db files
       - ./docker/mysql/data:/var/lib/mysql
