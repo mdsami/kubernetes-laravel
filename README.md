@@ -1,4 +1,4 @@
-# Laravel with Google Kubernetes Engine
+# Laravel with Azure Kubernetes Service, Amazon Elastic Kubernetes Service (Amazon EKS) and Google Kubernetes Engine
 
 ## Prerequisites
 * [Docker](https://www.docker.com/get-started)
