@@ -59,13 +59,15 @@ kubectl apply -f k8s/configurations/configmap-nginx.yaml
 ### 4. (Optional) Setup HTTPS with TLS Secret
 Create a TLS secret:
 
-```kubectl create secret tls secret-tls --cert [CERTIFICATE_FILE] --key [KEY_FILE]
+```
+kubectl create secret tls secret-tls --cert [CERTIFICATE_FILE] --key [KEY_FILE]
 ```
 
 ### 5. Deploy the Application
 Deploy the Laravel app and the services using Kubernetes manifests:
 
-```kubectl apply -f k8s/deployments/deployment.yaml
+```
+kubectl apply -f k8s/deployments/deployment.yaml
 kubectl apply -f k8s/services/service.yaml
 ```
 
@@ -74,28 +76,33 @@ Ensure the AWS Load Balancer Controller is installed (follow the guide).
 
 Then, apply the Ingress resource:
 
-```kubectl apply -f k8s/ingress/ingress.yaml 
+```
+kubectl apply -f k8s/ingress/ingress.yaml 
 ```
 
 ### 7. Verify the Deployment
 Once deployed, get the Load Balancer DNS name:
 
-``` kubectl get svc
+```
+kubectl get svc
 ```
 ### To verify the application:
 
-```curl -H "host: DOMAIN_NAME" http://LOAD_BALANCER_DNS
+```
+curl -H "host: DOMAIN_NAME" http://LOAD_BALANCER_DNS
 ```
 
 ## Troubleshooting
 Force Pod Update
 If changes to the image are not picked up, update the imagePullPolicy in your deployment file to:
 
-```imagePullPolicy: "Always" 
+```
+imagePullPolicy: "Always" 
 ```
 ### Then reapply the deployment:
 
-``` kubectl apply -f k8s/deployments/deployment.yaml 
+```
+kubectl apply -f k8s/deployments/deployment.yaml 
 ```
 
 ### Additional Resources
